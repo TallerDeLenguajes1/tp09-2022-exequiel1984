@@ -1,0 +1,15 @@
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\bin\Debug\net6.0\tp09-2022-exequiel1984.exe
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\bin\Debug\net6.0\tp09-2022-exequiel1984.deps.json
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\bin\Debug\net6.0\tp09-2022-exequiel1984.runtimeconfig.json
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\bin\Debug\net6.0\tp09-2022-exequiel1984.dll
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\bin\Debug\net6.0\tp09-2022-exequiel1984.pdb
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.csproj.AssemblyReference.cache
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.AssemblyInfoInputs.cache
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.AssemblyInfo.cs
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.dll
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\refint\tp09-2022-exequiel1984.dll
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.pdb
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\tp09-2022-exequiel1984.genruntimeconfig.cache
+C:\Users\Alumno\taller_exequiel\tp09-2022-exequiel1984\obj\Debug\net6.0\ref\tp09-2022-exequiel1984.dll
