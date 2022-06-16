@@ -44,60 +44,46 @@ CantidadProductosACrear = rand.Next(1, 5);
 
 var ListaProductos = new List<producto>();
 
-CrearProducto(CantidadProductosACrear, ListaProductos);
-
-//Creo y escribo el archivo Json
+for (int i = 0; i < CantidadProductosACrear; i++)
+{
+    producto producto = CrearProducto();
+    CargarProductoALista(producto, ListaProductos);    
+}
 
 string NombreNuevoArchivoJson = "ListaProductos.json";
 
 CrearYEscribirArchivoJson(ListaProductos, NombreNuevoArchivoJson);
 
-string documento;
-using (var archivoOpen = new FileStream(NombreNuevoArchivoJson, FileMode.Open))
+string NombreArchivoJson = NombreNuevoArchivoJson;
+
+var ListaProductosDesdeArchivoJson = new List<producto>();
+
+ListaProductosDesdeArchivoJson = DeserealizarArchivoJson(NombreArchivoJson);
+
+MostrarLista(ListaProductosDesdeArchivoJson);
+
+
+
+static producto CrearProducto()
 {
-    using (var strReader = new StreamReader(archivoOpen))
-    {
-        documento = strReader.ReadToEnd();
-        archivoOpen.Close();
-    }
-}
-
-var ListadoJson = JsonSerializer.Deserialize<List<producto>>(documento);
-
-foreach (var producto in ListadoJson)
-{
-    System.Console.WriteLine("Nombre: " + producto.Nombre);
-    System.Console.WriteLine("Fecha de vencimiento: " + producto.FechaVencimiento.ToShortDateString());
-    System.Console.WriteLine("Precio: $" + producto.Precio);
-    System.Console.WriteLine("Tamaño: " + producto.Tamanio + "\n");
-
-}
-
-
-
-
-
-
-static void CrearProducto(int cantidad, List<producto> ListaProductos)
-{
-
     Random rand = new Random();
 
-    for (int i = 0; i < cantidad; i++)
-    {
-        var producto = new producto();
+        var NuevoProducto = new producto();
 
         int IndexNombre = rand.Next(0, Enum.GetValues(typeof(NombresProductos)).Length);
-        producto.Nombre = Enum.GetName(typeof(NombresProductos), IndexNombre);
+        NuevoProducto.Nombre = Enum.GetName(typeof(NombresProductos), IndexNombre);
 
-        producto.FechaVencimiento = new DateTime(rand.Next(2022, 2025), rand.Next(01, 13), rand.Next(01, 32));
-        producto.Precio = rand.Next(1000, 5001);
+        NuevoProducto.FechaVencimiento = new DateTime(rand.Next(2022, 2025), rand.Next(01, 13), rand.Next(01, 32));
+        NuevoProducto.Precio = rand.Next(1000, 5001);
 
         int IndexTamanio = rand.Next(0, Enum.GetValues(typeof(TamanioProductos)).Length);
-        producto.Tamanio = Enum.GetName(typeof(TamanioProductos), IndexTamanio);
+        NuevoProducto.Tamanio = Enum.GetName(typeof(TamanioProductos), IndexTamanio);
 
-        ListaProductos.Add(producto);
-    }
+        return(NuevoProducto);
+}
+
+static void CargarProductoALista(producto producto, List<producto> Lista){
+    Lista.Add(producto);
 }
 
 static void CrearYEscribirArchivoJson(List<producto> Lista, string NombreNuevoArchivoJson)
@@ -111,5 +97,33 @@ static void CrearYEscribirArchivoJson(List<producto> Lista, string NombreNuevoAr
             strWriter.WriteLine("{0}", ListaSerealizada);
             strWriter.Close();
         }
+    }
+}
+
+static List<producto> DeserealizarArchivoJson(string NombreArchivoJson)
+{
+    string StringADeserealizar;
+    using (var archivoOpen = new FileStream(NombreArchivoJson, FileMode.Open))
+    {
+        using (var strReader = new StreamReader(archivoOpen))
+        {
+            StringADeserealizar = strReader.ReadToEnd();
+            archivoOpen.Close();
+        }
+    }
+
+    var ListaDeserealizada = JsonSerializer.Deserialize<List<producto>>(StringADeserealizar);
+    return ListaDeserealizada;
+}
+
+static void MostrarLista(List<producto> Lista)
+{
+    foreach (var producto in Lista)
+    {
+        System.Console.WriteLine("Nombre: " + producto.Nombre);
+        System.Console.WriteLine("Fecha de vencimiento: " + producto.FechaVencimiento.ToShortDateString());
+        System.Console.WriteLine("Precio: $" + producto.Precio);
+        System.Console.WriteLine("Tamaño: " + producto.Tamanio + "\n");
+
     }
 }
