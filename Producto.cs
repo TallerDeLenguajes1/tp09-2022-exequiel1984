@@ -1,10 +1,16 @@
 namespace tp092022exequiel1984
 {
     public enum NombresProductos{
-        Galletas= 0,
-        Chicles=1,
-        Chocolate=2,
-        Alfajor=3
+        Galletas,
+        Chicles,
+        Chocolate,
+        Alfajor
+    };
+
+    public enum TamanioProductos{
+        Chico,
+        Mediano,
+        Grande
     };
 
     public class producto {
